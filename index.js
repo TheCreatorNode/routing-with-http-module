@@ -36,6 +36,7 @@ const server = http.createServer((req, res) => {
   ) {
     try {
       studentData = JSON.stringify(readFile(), null, 2);
+      studentData.sort((a, b) => a.name.localCompare(b.name));
       res.writeHead(200, { "Content-Type": "application/json" });
       res.end(studentData);
     } catch (error) {
