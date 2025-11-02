@@ -170,17 +170,18 @@ const server = http.createServer((req, res) => {
     studentData = readFile();
     let id = parseInt(path.split("/")[2]);
     let index = studentData.findIndex((s) => s.id === id);
+    let exist = studentData.some((s) => s.id == -id);
 
-    if (index === -1) {
+    if (!exist) {
       res.writeHead(404, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ error: "student not found" }));
-    } else {
-      studentData = studentData.filter((s) => s.id !== id);
-      fs.writeFileSync("students.json", JSON.stringify(studentData, null, 2));
-
-      res.writeHead(204);
-      res.end();
+      return;
     }
+    studentData = studentData.filter((s) => s.id !== id);
+    fs.writeFileSync("students.json", JSON.stringify(studentData, null, 2));
+
+    res.writeHead(204);
+    res.end();
   } else {
     res.writeHead(404, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ error: "Not Found" }));
