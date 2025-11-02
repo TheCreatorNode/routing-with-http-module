@@ -122,15 +122,6 @@ const server = http.createServer((req, res) => {
             : 1;
         studentData.push(newStudent);
 
-        if (index === -1) {
-          res.writeHead(404, { "Content-Type": "application/json" });
-          res.end(JSON.stringify({ error: "student not found" }));
-        } else {
-          studentData[index] = {
-            ...studentData[index],
-            ...updatedStudent,
-          };
-        }
         fs.writeFileSync(
           "students.json",
           JSON.stringify(studentData[index], null, 2)
