@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Bright",
+    "age": "24",
+    "course": "fullStack"
+  },
+  {
+    "id": "2",
+    "name": "Kaleo",
+    "age": "17",
+    "course": "Product Design"
+  },
+  {
+    "id": "3",
+    "name": "Aisha",
+    "age": "20",
+    "course": "Frontend Development"
+  },
+  {
+    "id": "4",
+    "name": "Amanda",
+    "age": "23",
+    "course": "Machine Learning and AI"
+  },
+  {
+    "id": "5",
+    "name": "Isaac",
+    "age": "23",
+    "course": "fullStack"
+  }
+]

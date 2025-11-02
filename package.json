@@ -1,0 +1,11 @@
+{
+  "name": "handlinghttpmethods",
+  "version": "1.0.0",
+  "description": "a simple node project to handle http methos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bright Bassey",
+  "license": "ISC"
+}
