@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Bright",
     "age": "24",
-    "course": "fullStack"
+    "course": "Physics"
   },
   {
     "id": "2",
@@ -28,5 +28,10 @@
     "name": "Isaac",
     "age": "23",
     "course": "fullStack"
+  },
+  {
+    "name": "Bright Bassey",
+    "course": "Computer Science",
+    "id": 6
   }
 ]

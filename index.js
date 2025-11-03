@@ -122,10 +122,7 @@ const server = http.createServer((req, res) => {
             : 1;
         studentData.push(newStudent);
 
-        fs.writeFileSync(
-          "students.json",
-          JSON.stringify(studentData[index], null, 2)
-        );
+        fs.writeFileSync("students.json", JSON.stringify(studentData, null, 2));
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(newStudent, null, 2));
       } catch (error) {
@@ -143,7 +140,7 @@ const server = http.createServer((req, res) => {
       studentData = readFile();
       console.log(studentData);
       const updatedStudent = JSON.parse(body);
-      let index = studentData.findIndex((s) => s.id === id);
+      let index = studentData.findIndex((s) => Number(s.id) === id);
       console.log(index);
       try {
         if (index === -1) {
