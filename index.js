@@ -166,8 +166,7 @@ const server = http.createServer((req, res) => {
   } else if (method === "DELETE" && path.startsWith("/students/")) {
     studentData = readFile();
     let id = parseInt(path.split("/")[2]);
-    let index = studentData.findIndex((s) => s.id === id);
-    let exist = studentData.some((s) => s.id == -id);
+    let exist = studentData.some((s) => Number(s.id) === id);
 
     if (!exist) {
       res.writeHead(404, { "Content-Type": "application/json" });
